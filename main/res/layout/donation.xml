@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/white_background">
+
+    <!-- Main Content Container with gray gradient background -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Back Button -->
+
+        <!-- Charify Logo -->
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@null"
+            android:src="?attr/actionModeCloseDrawable" />
+
+        <ImageView
+            android:id="@+id/charifyview"
+            android:layout_width="288dp"
+            android:layout_height="53dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/charify_two" />
+
+        <!-- Category Title with Icon -->
+        <LinearLayout
+            android:id="@+id/categoryHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/charifyview"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nats"
+                android:text="HEALTH"
+                android:textColor="#000000"
+                android:textSize="50sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/health_care" />
+        </LinearLayout>
+
+        <!-- Amount Input Field -->
+        <TextView
+            android:id="@+id/enterAmountLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categoryHeader"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/nats"
+            android:text="ENTER AMOUNT (In Peso)"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Input Field -->
+        <EditText
+            android:id="@+id/amountInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/enterAmountLabel"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/rounded_gray_background"
+            android:drawablePadding="8dp"
+            android:inputType="numberDecimal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/paymentMethodLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/amountInput"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="PAYMENT METHOD"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/nats"
+            />
+
+        <!-- Payment Methods Grid (2x2) -->
+
+
+        <!-- Bottom Navigation Container -->
+        <GridLayout
+            android:id="@+id/paymentMethodsGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/paymentMethodLabel"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginEnd="24dp"
+            android:columnCount="2"
+            android:rowCount="2">
+
+            <!-- GCash Button -->
+            <FrameLayout
+                android:id="@+id/gcashButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_blue_background"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/gcash" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nats"
+                        android:text="GCASH"
+                        android:textColor="@android:color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Maya Button -->
+            <FrameLayout
+                android:id="@+id/mayaButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_button"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nats"
+                    android:text="maya"
+                    android:textColor="#00CC66"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <!-- Credit/Debit Button -->
+            <FrameLayout
+                android:id="@+id/creditDebitButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:background="@drawable/rounded_red_background"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/credit_card" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nats"
+                        android:text="CREDIT/DEBIT"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+        </GridLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomItemsContainer"
+            android:layout_width="386dp"
+            android:layout_height="71dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <!-- Icons Missing -->
+            <ImageButton
+                android:id="@+id/squareItem1"
+                style="@style/BottomSquareItem"
+                android:backgroundTint="#000000"
+                android:src="@drawable/icon1" />
+
+            <ImageButton
+                android:id="@+id/squareItem2"
+                style="@style/BottomSquareItem"
+                android:backgroundTint="#000000"
+                android:src="@drawable/icon1" />
+
+            <ImageButton
+                android:id="@+id/squareItem3"
+                style="@style/BottomSquareItem"
+                android:backgroundTint="#000000"
+                android:src="@drawable/icon1" />
+
+            <ImageButton
+                android:id="@+id/squareItem4"
+                style="@style/BottomSquareItem"
+                android:backgroundTint="#000000"
+                android:src="@drawable/icon1" />
+
+            <ImageButton
+                android:id="@+id/squareItem5"
+                style="@style/BottomSquareItem"
+                android:backgroundTint="#000000"
+                android:src="@drawable/icon1" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
